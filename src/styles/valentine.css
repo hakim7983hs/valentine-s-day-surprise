@@ -1,0 +1,386 @@
+/* Valentine's Day Page Styles */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* Main Container */
+.valentine-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a0a10 0%, #2d1520 50%, #1a0a10 100%);
+  background-image: url('../assets/valentine-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+  font-family: 'Playfair Display', serif;
+}
+
+.valentine-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26, 10, 16, 0.7);
+  pointer-events: none;
+}
+
+.valentine-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1.5rem;
+  gap: 3rem;
+}
+
+/* Title Styles */
+.valentine-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4rem;
+  color: #f4a8b8;
+  text-shadow: 0 0 20px rgba(244, 168, 184, 0.5);
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease-out;
+}
+
+.valentine-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: #d4a574;
+  animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Falling Hearts */
+.falling-hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.falling-heart {
+  position: absolute;
+  top: -50px;
+  animation: fall linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+/* Photo Frame */
+.photo-frame-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  animation: fadeIn 1s ease-out 0.3s both;
+}
+
+.photo-frame {
+  position: relative;
+  padding: 1rem;
+  background: linear-gradient(145deg, #d4a574, #c4956a, #d4a574);
+  border-radius: 1rem;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.75rem;
+  pointer-events: none;
+}
+
+.photo-inner {
+  width: 280px;
+  height: 280px;
+  background: linear-gradient(135deg, #2d1520, #1a0a10);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.photo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: #f4a8b8;
+}
+
+.photo-placeholder-icon {
+  font-size: 4rem;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.photo-placeholder-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.25rem;
+  color: #d4a574;
+}
+
+.photo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-caption {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  color: #f4a8b8;
+  text-shadow: 0 0 10px rgba(244, 168, 184, 0.3);
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Date Display */
+.date-display {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(45, 21, 32, 0.8);
+  border-radius: 1rem;
+  border: 1px solid rgba(212, 165, 116, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.date-label {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: #d4a574;
+  margin-bottom: 0.5rem;
+}
+
+.date-value {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: #f4a8b8;
+  text-shadow: 0 0 15px rgba(244, 168, 184, 0.4);
+}
+
+.date-hearts {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: #f4a8b8;
+}
+
+.date-heart {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.date-heart:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.date-heart:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Hidden Letter */
+.hidden-letter-container {
+  animation: fadeIn 1s ease-out 0.7s both;
+}
+
+.envelope {
+  position: relative;
+  width: 200px;
+  height: 140px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.envelope:hover {
+  transform: scale(1.05);
+}
+
+.envelope-body {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(145deg, #f4a8b8, #e89aab);
+  border-radius: 0 0 0.5rem 0.5rem;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-top: 60px solid #d4a574;
+  transition: transform 0.5s ease;
+  transform-origin: top center;
+}
+
+.envelope.open .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.envelope-seal {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: #8b2942;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d4a574;
+  font-size: 1.25rem;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.envelope-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1rem;
+  color: #d4a574;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Letter Modal */
+.letter-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.3s ease-out;
+  padding: 1rem;
+}
+
+.letter-modal {
+  background: linear-gradient(145deg, #fef9f3, #fdf5ed);
+  padding: 3rem 2rem;
+  border-radius: 0.5rem;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.letter-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #8b2942;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.letter-close:hover {
+  transform: scale(1.1);
+}
+
+.letter-content {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  color: #8b2942;
+  line-height: 2;
+  text-align: center;
+}
+
+.letter-signature {
+  margin-top: 2rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.25rem;
+  color: #d4a574;
+  text-align: right;
+}
+
+.letter-hearts {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  color: #f4a8b8;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .valentine-title {
+    font-size: 2.5rem;
+  }
+  
+  .photo-inner {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .date-value {
+    font-size: 2rem;
+  }
+  
+  .letter-content {
+    font-size: 1.25rem;
+  }
+}
