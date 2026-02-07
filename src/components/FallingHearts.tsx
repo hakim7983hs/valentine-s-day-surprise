@@ -6,6 +6,7 @@ interface Heart {
   size: number;
   duration: number;
   delay: number;
+  opacity: number;
 }
 
 const FallingHearts = () => {
@@ -13,17 +14,20 @@ const FallingHearts = () => {
 
   useEffect(() => {
     const newHearts: Heart[] = [];
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 25; i++) {
       newHearts.push({
         id: i,
         left: Math.random() * 100,
-        size: Math.random() * 20 + 10,
-        duration: Math.random() * 5 + 5,
-        delay: Math.random() * 5,
+        size: Math.random() * 18 + 12,
+        duration: Math.random() * 8 + 8,
+        delay: Math.random() * 10,
+        opacity: Math.random() * 0.4 + 0.3,
       });
     }
     setHearts(newHearts);
   }, []);
+
+  const heartSymbols = ['❤', '♥', '💕', '💗'];
 
   return (
     <div className="falling-hearts-container">
@@ -36,10 +40,11 @@ const FallingHearts = () => {
             fontSize: `${heart.size}px`,
             animationDuration: `${heart.duration}s`,
             animationDelay: `${heart.delay}s`,
-            color: heart.id % 2 === 0 ? '#f4a8b8' : '#d4a574',
+            color: heart.id % 3 === 0 ? '#f4a8b8' : heart.id % 3 === 1 ? '#d4a574' : '#f7c6d0',
+            opacity: heart.opacity,
           }}
         >
-          ❤
+          {heartSymbols[heart.id % heartSymbols.length]}
         </span>
       ))}
     </div>
