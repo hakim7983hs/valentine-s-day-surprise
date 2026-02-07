@@ -57,6 +57,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Valentine Theme
+        burgundy: "hsl(var(--burgundy))",
+        rose: "hsl(var(--rose))",
+        gold: "hsl(var(--gold))",
+        cream: "hsl(var(--cream))",
       },
       borderRadius: {
         lg: "var(--radius)",
