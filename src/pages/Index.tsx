@@ -1,11 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import '../styles/valentine.css';
+import FallingHearts from '../components/FallingHearts';
+import PhotoFrame from '../components/PhotoFrame';
+import DateDisplay from '../components/DateDisplay';
+import HiddenLetter from '../components/HiddenLetter';
 
 const Index = () => {
+  // Customize these values for your special someone!
+  const specialDate = "February 14, 2024";
+  const loveMessage = "Every moment with you feels like a beautiful dream. You are my sunshine, my heart, my everything. I love you more than words could ever express. Happy Valentine's Day, my love! 💕";
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="valentine-page">
+      <FallingHearts />
+      
+      <div className="valentine-content">
+        <header>
+          <h1 className="valentine-title">Happy Valentine's Day</h1>
+          <p className="valentine-subtitle">To the love of my life</p>
+        </header>
+
+        <PhotoFrame caption="Us Together Forever" />
+        
+        <DateDisplay date={specialDate} label="Our Special Day" />
+        
+        <HiddenLetter message={loveMessage} />
       </div>
     </div>
   );
