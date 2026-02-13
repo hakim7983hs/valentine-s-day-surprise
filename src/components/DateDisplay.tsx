@@ -1,17 +1,19 @@
+import { CalendarHeart } from "lucide-react";
+
 interface DateDisplayProps {
   date: string;
   label?: string;
 }
 
-const DateDisplay = ({ date, label = "Together Since" }: DateDisplayProps) => {
+const DateDisplay = ({ date, label = "Our Special Day" }: DateDisplayProps) => {
   return (
-    <div className="text-center p-6 bg-burgundy/30 backdrop-blur-sm rounded-2xl border border-gold/30 shadow-xl">
-      <p className="font-playfair italic text-gold text-sm tracking-widest uppercase mb-2">{label}</p>
-      <p className="font-dancing text-4xl sm:text-5xl text-rose drop-shadow-lg">{date}</p>
-      <div className="flex justify-center gap-2 mt-4 text-2xl">
-        <span className="animate-heartbeat text-rose">❤</span>
-        <span className="animate-heartbeat text-rose" style={{ animationDelay: '0.2s' }}>❤</span>
-        <span className="animate-heartbeat text-rose" style={{ animationDelay: '0.4s' }}>❤</span>
+    <div className="flex flex-col items-center gap-3">
+      <div className="flex items-center gap-2 text-rose-light">
+        <CalendarHeart className="w-5 h-5" />
+        <span className="font-script text-lg">{label}</span>
+      </div>
+      <div className="bg-card/80 backdrop-blur-sm px-6 py-3 rounded-full border border-rose-light/30 shadow-romantic">
+        <p className="font-display text-2xl text-foreground tracking-wide">{date}</p>
       </div>
     </div>
   );
