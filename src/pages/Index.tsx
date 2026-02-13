@@ -3,6 +3,7 @@ import FallingHearts from "@/components/FallingHearts";
 import PhotoFrame from "@/components/PhotoFrame";
 import DateDisplay from "@/components/DateDisplay";
 import HiddenLetter from "@/components/HiddenLetter";
+import MemoryTimeline from "@/components/MemoryTimeline";
 import valentineBg from "@/assets/valentine-bg.jpg";
 
 const Index = () => {
@@ -67,6 +68,11 @@ I love you more than words could ever express.`;
         {/* Hidden Love Letter */}
         <section className="text-center animate-reveal" style={{ animationDelay: "0.6s" }}>
           <HiddenLetter message={loveMessage} />
+        </section>
+
+        {/* Memory Timeline */}
+        <section className="w-full mb-16 animate-reveal" style={{ animationDelay: "0.8s" }}>
+          <MemoryTimeline />
         </section>
 
         {/* Footer */}
