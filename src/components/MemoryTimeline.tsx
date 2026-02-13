@@ -1,4 +1,8 @@
 import { Heart, Camera } from "lucide-react";
+import memory1 from "@/assets/memory-1.jpg";
+import memory2 from "@/assets/memory-2.jpg";
+import memory3 from "@/assets/memory-3.jpg";
+import memory4 from "@/assets/memory-4.jpg";
 
 interface Memory {
   id: number;
@@ -15,6 +19,7 @@ const memories: Memory[] = [
     date: "The day it all began",
     description:
       "The moment I saw you, I knew my life was about to change forever. Every second felt magical.",
+    imageSrc: memory1,
   },
   {
     id: 2,
@@ -22,6 +27,7 @@ const memories: Memory[] = [
     date: "A night to remember",
     description:
       "Under the stars, we shared our dreams and realized we were meant to walk this journey together.",
+    imageSrc: memory2,
   },
   {
     id: 3,
@@ -29,6 +35,7 @@ const memories: Memory[] = [
     date: "Making memories",
     description:
       "Every trip, every laugh, every little moment with you becomes my most treasured memory.",
+    imageSrc: memory3,
   },
   {
     id: 4,
@@ -36,6 +43,7 @@ const memories: Memory[] = [
     date: "Pure happiness",
     description:
       "Some days are just perfect — not because everything goes right, but because I spend them with you.",
+    imageSrc: memory4,
   },
 ];
 

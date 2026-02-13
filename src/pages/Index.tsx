@@ -5,6 +5,7 @@ import DateDisplay from "@/components/DateDisplay";
 import HiddenLetter from "@/components/HiddenLetter";
 import MemoryTimeline from "@/components/MemoryTimeline";
 import valentineBg from "@/assets/valentine-bg.jpg";
+import coupleMain from "@/assets/couple-main.jpg";
 
 const Index = () => {
   // Customize these for your partner!
@@ -57,7 +58,7 @@ I love you more than words could ever express.`;
 
         {/* Photo Section */}
         <section className="mb-12 animate-reveal" style={{ animationDelay: "0.2s" }}>
-          <PhotoFrame />
+          <PhotoFrame imageSrc={coupleMain} />
         </section>
 
         {/* Date Display */}
